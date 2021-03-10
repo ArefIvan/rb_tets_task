@@ -1,0 +1,112 @@
+.header{
+   
+
+
+    &__nav{
+
+        @media screen and (max-width: $desktopWidth){
+  
+        }
+        @media screen and (max-width: $tableWidth ){
+            
+        }
+
+        &__items{
+         
+        }
+        &__item{
+            
+ 
+        }
+        a{
+            color: inherit;
+        }
+
+    }
+
+ 
+
+    &__phonemenu{
+
+        display:none;
+        margin:auto 0;
+        position: relative;
+        
+
+        @media screen and (max-width: $tableWidth ){
+            display: block;
+            
+        }
+
+        a{
+            color:inherit;
+        }
+        &__gamb{
+            height: 40px;
+            transition: height  .5s;
+            overflow: hidden;
+        }
+        &__input{
+            position: absolute;
+            top:0;
+            left:0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            // visibility: hidden;   
+                &:checked~.header__phonemenu__gamb{
+                   height: 0;
+                }
+                &:checked~.header__phonemenu__nav{
+                    display: block;
+                    max-height: 300px;
+                    opacity: 1;
+                    position: relative;
+                    
+                }
+        }
+        &__nav{
+            display: none;
+            flex-wrap: wrap;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition-property:opacity,max-height;
+            transition-duration: .5s;
+           
+            margin-right: rem(10);
+
+            &__item{
+                padding: 2px 20px;
+                
+                
+                // border-radius: 4px;
+              
+            }
+            &__close{
+                position: relative;
+                margin: rem(8) rem(3) rem(3) rem(10);
+                @include size(14px);
+                &::after,&::before{
+                    content: "";
+                    position: absolute;
+                    width: calc(100%);
+                    left:0; 
+                    height: rem(2);
+                    
+                &::after{
+                    transform:  rotate(45deg);
+                }
+                &::before{
+                    transform:  rotate(-45deg);
+                }
+            }
+            }
+       
+       
+
+        }
+  
+    
+    }
+}
